@@ -1,0 +1,33 @@
+name: Linting with clj-kondo
+
+on:
+  workflow_call:
+    inputs:
+      clj-kondo-version:
+        description: Version of clj-kondo to install
+        required: false
+        type: string
+        default: '2023.01.20'
+
+      lint-directories:
+        required: false
+        description: List of directories to run linting on
+        type: string
+        default: 'src/main src/test' 
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout calling repository
+        uses: actions/checkout@v3
+
+      - name: Setup clj-kondo # No need to install Java for just clj-kondo
+        uses: DeLaGuardo/setup-clojure@9.5
+        with:
+          clj-kondo: ${{ inputs.clj-kondo-version }}
+      
+      - name: Run clj-kondo linting
+        run: clj-kondo --lint ${{ inputs.lint-directories }}
+ 
