@@ -12,3 +12,15 @@ pom.xml.asc
 .lein-failures
 .nrepl-port
 .cpcache/
+
+# VSCode
+.nrepl-port
+.cpcache/
+.calva
+.clj-kondo/.cache
+.lsp
+.vscode/
+
+# MacOS
+.DS_Store
+
