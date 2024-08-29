@@ -7,7 +7,7 @@ on:
         description: Version of clj-kondo to install
         required: false
         type: string
-        default: '2023.01.20'
+        default: '2024.08.01'
       
       lint-directories:
         required: false
