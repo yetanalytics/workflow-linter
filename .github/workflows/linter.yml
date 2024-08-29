@@ -30,4 +30,3 @@ jobs:
       
       - name: Run clj-kondo linting
         run: clj-kondo --lint ${{ inputs.lint-directories }}
- 
