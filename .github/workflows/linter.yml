@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout calling repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup clj-kondo # No need to install Java for just clj-kondo
         uses: DeLaGuardo/setup-clojure@9.5
